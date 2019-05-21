@@ -33,7 +33,7 @@ body{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(75px);
+    transform: translateX(calc(-50% + 75px)) translateY(calc(-50%));
 }
 
 .moon .crater1, .crater2, .crater3{
@@ -44,7 +44,7 @@ body{
     height: 5px;
     border-radius: 50%;
     background-color: #c4c1c1;
-    transparent: 3%;
+    /*transparency: 3%;*/
     box-shadow: 1px 3px 7px #b3b0b0;
 }
 
@@ -63,7 +63,7 @@ body{
 }
 
 .planet > .moon {
-    animation: myOrbit 4s linear infinite;
+    /*animation: myOrbit 4s linear infinite;*/
 }
 .earth{
     width: 40px;
@@ -77,14 +77,8 @@ body{
     /*animation: myOrbit 4s linear infinite;*/
 }
 .earth > .moon {
-    animation: myOrbit 6s linear infinite;
+    /*animation: myOrbit 6s linear infinite;*/
 }
-
-/*.stars{
-  background: #fff;
-  height: 1px;
-  width: 1px;
-}*/
 
 @keyframes myOrbit {
     from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
