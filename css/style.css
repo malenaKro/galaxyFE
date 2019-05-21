@@ -86,9 +86,11 @@ body {
     /*background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);*/
     background: url("../img/map.png");
     background-size: cover;
-    box-shadow: -30px -30px 0 -10px rgba(0, 0, 0, 0.1) inset,
+    /*box-shadow: -20px -10px 0 -10px rgba(0, 0, 0, 0.1) inset,
     -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset,
-    5px 5px 0 0 rgba(255, 255, 255, 0.2) inset;
+    5px 5px 0 0 rgba(255, 255, 255, 0.2) inset;*/
+    box-shadow: -20px -10px 0 -10px rgba(0, 0, 0, 0.1) inset,
+    -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset;
     left: 50%;
     top: 50%;
     transform: translateX(calc(-50% + 100px)) translateY(-50%);
