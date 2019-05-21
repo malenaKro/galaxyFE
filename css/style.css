@@ -18,7 +18,8 @@ body {
 #stars {
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    /*background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);*/
+    background: #090A0F;
     position: relative;
     z-index: -3;
 }
@@ -32,7 +33,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 70px #fec85c;
+    box-shadow: 0 0 70px 15px #fec85c;
 }
 
 .moon {
@@ -74,7 +75,7 @@ body {
 }
 
 .planet > .moon {
-    animation: myOrbit 4s linear infinite;
+    /*animation: myOrbit 4s linear infinite;*/
 }
 
 .earth {
@@ -92,13 +93,13 @@ body {
     -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(calc(-50% + 100px)) translateY(-50%);
     animation: earthRotation 20s linear infinite;
-    /*animation: myOrbit 4s linear infinite;*/
+    animation: animateEarth 4s linear infinite;
 }
 
 .earth > .moon {
-    animation: myOrbit 6s linear infinite;
+    animation: myOrbit 2s linear infinite;
 }
 
 @keyframes myOrbit {
@@ -107,6 +108,15 @@ body {
     }
     to {
         transform: rotate(360deg) translateX(75px) rotate(-360deg);
+    }
+}
+
+@keyframes animateEarth  {
+    from {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
     }
 }
 

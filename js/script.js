@@ -34,17 +34,14 @@
             //ctx.fillRect(this.x, this.y, 8, 8);
         }
         update(){
-            //this.x+=this.vx;
             this.y+=this.vy;
 
             //check out of bounds
-            if (this.x <= 0
-                || this.x >= canvas.width) {
-                this.vx *= -1;
+            if (this.y <= 0) {
+                this.y = canvas.height;
             }
-            if (this.y <= 0
-                || this.y >= canvas.height) {
-                this.vy *= -1;
+            if (this.y >= canvas.height){
+                this.y = 0;
             }
         }
     }
