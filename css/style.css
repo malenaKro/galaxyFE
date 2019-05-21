@@ -93,9 +93,9 @@ body {
     -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset;
     left: 50%;
     top: 50%;
-    transform: translateX(calc(-50% + 100px)) translateY(-50%);
+    transform: translate(-50%, -50%);
     animation: earthRotation 20s linear infinite;
-    animation: animateEarth 4s linear infinite;
+    /*animation: myOrbit 4s linear infinite;*/
 }
 
 .earth > .moon {
