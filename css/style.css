@@ -97,7 +97,7 @@ body {
 }
 
 .earth > .moon {
-    animation: myOrbit 6s linear infinite;
+    animation: myOrbit 2s linear infinite;
 }
 
 @keyframes myOrbit {
