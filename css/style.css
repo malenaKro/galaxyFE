@@ -1,7 +1,92 @@
 body{
-    /*background: radial-gradient(ellipse at bottom, #435481 0%, #1f2639 0%);*/
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
 }
 
-.sun{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.planet {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 25px 25px, #fec85c, #f07a23);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.moon {
+    width: 20px;
+    height: 20px;
+    box-shadow: 10px 20px 50px #6FCAEA;
+    background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(75px);
+}
 
+.moon .crater1, .crater2, .crater3{
+    position: absolute;
+    left: 45%;
+    top: 25%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #c4c1c1;
+    transparent: 3%;
+    box-shadow: 1px 3px 7px #b3b0b0;
+}
+
+.crater2{
+    left: 14%;
+    top: 70%;
+    width: 4px;
+    height: 4px;
+}
+
+.crater3{
+    left: 60%;
+    top: 58%;
+    width: 4px;
+    height: 4px;
+}
+
+.planet > .moon {
+    animation: myOrbit 4s linear infinite;
+}
+.earth{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /*animation: myOrbit 4s linear infinite;*/
+}
+.earth > .moon {
+    animation: myOrbit 6s linear infinite;
+}
+
+/*.stars{
+  background: #fff;
+  height: 1px;
+  width: 1px;
+}*/
+
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
 }
