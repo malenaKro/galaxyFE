@@ -19,11 +19,11 @@
         constructor (x, y, color = 'white'){
             this.x = x;
             this.y = y;
-            this.radius = Math.floor(Math.random() * (6 - 1) + 1);
+            this.radius = Math.floor(Math.random() * (4 - 1) + 1);
             this.color = color;
 
             //this.vx = Math.random() - 0.5;
-            this.vy = Math.random() - 0.5;
+            this.vy = Math.random() * 0.1 - 0.05;
         }
 
         draw(){
