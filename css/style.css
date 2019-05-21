@@ -1,17 +1,20 @@
-body{
+body {
     height: 100%;
     overflow: hidden;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .content {
     width: 100vw;
     height: 100vh;
     position: relative;
 }
+
 #stars {
     width: 100vw;
     height: 100vh;
@@ -20,6 +23,7 @@ body{
     position: relative;
     z-index: -3;
 }
+
 .planet {
     width: 100px;
     height: 100px;
@@ -31,6 +35,7 @@ body{
     transform: translate(-50%, -50%);
     box-shadow: 0 0 70px 15px #fec85c;
 }
+
 .moon {
     width: 15px;
     height: 15px;
@@ -43,7 +48,7 @@ body{
     transform: translateX(calc(-50% + 75px)) translateY(calc(-50%));
 }
 
-.moon .crater1, .crater2, .crater3{
+.moon .crater1, .crater2, .crater3 {
     position: absolute;
     left: 45%;
     top: 25%;
@@ -51,18 +56,18 @@ body{
     height: 3px;
     border-radius: 50%;
     background-color: #c4c1c1;
-    /*transparency: 3%;*/
+    opacity: 0.75;
     box-shadow: 1px 3px 7px #b3b0b0;
 }
 
-.crater2{
+.crater2 {
     left: 14%;
     top: 67%;
     width: 2px;
     height: 2px;
 }
 
-.crater3{
+.crater3 {
     left: 60%;
     top: 58%;
     width: 2px;
@@ -72,21 +77,40 @@ body{
 .planet > .moon {
     /*animation: myOrbit 4s linear infinite;*/
 }
-.earth{
+
+.earth {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     position: absolute;
-    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    /*background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);*/
+    background: url("../img/map.png");
+    background-size: cover;
+    box-shadow: -30px -30px 0 -10px rgba(0, 0, 0, 0.1) inset,
+    -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset,
+    5px 5px 0 0 rgba(255, 255, 255, 0.2) inset;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    animation: earthRotation 20s linear infinite;
     /*animation: myOrbit 4s linear infinite;*/
 }
+
 .earth > .moon {
     /*animation: myOrbit 6s linear infinite;*/
 }
+
 @keyframes myOrbit {
-    from { transform: rotate(0deg) translateX(75px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
+    from {
+        transform: rotate(0deg) translateX(75px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(75px) rotate(-360deg);
+    }
+}
+
+@keyframes earthRotation {
+    100% {
+        background-position: 250% 50%;
+    }
 }
