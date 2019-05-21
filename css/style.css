@@ -4,6 +4,7 @@ body{
     overflow: hidden;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +51,7 @@ body{
 
 .crater2{
     left: 14%;
-    top: 70%;
+    top: 67%;
     width: 4px;
     height: 4px;
 }
@@ -65,6 +66,7 @@ body{
 .planet > .moon {
     animation: myOrbit 4s linear infinite;
 }
+
 .earth{
     width: 40px;
     height: 40px;
