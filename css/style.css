@@ -24,6 +24,43 @@ body {
     z-index: -3;
 }
 
+.moon {
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 40px #6FCAEA;
+    background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.moon .crater1, .crater2, .crater3 {
+    position: absolute;
+    left: 45%;
+    top: 25%;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: #c4c1c1;
+    opacity: 0.75;
+    box-shadow: 1px 3px 7px #b3b0b0;
+}
+
+.crater2 {
+    left: 14%;
+    top: 67%;
+    width: 2px;
+    height: 2px;
+}
+
+.crater3 {
+    left: 60%;
+    top: 58%;
+    width: 2px;
+    height: 2px;
+}
+
 .planet {
     width: 100px;
     height: 100px;
@@ -55,46 +92,16 @@ body {
     box-shadow: 0 0 70px 10px #25c9fc;
 }
 
-.moon {
-    width: 15px;
-    height: 15px;
-    box-shadow: 0 0 40px #6FCAEA;
-    background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);
-    border-radius: 50%;
+.planet > .moon {
+    /*animation: myOrbit 4s linear infinite;*/
+}
+
+.earthGroup {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateX(calc(-50% + 75px)) translateY(calc(-50%));
-}
-
-.moon .crater1, .crater2, .crater3 {
-    position: absolute;
-    left: 45%;
-    top: 25%;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: #c4c1c1;
-    opacity: 0.75;
-    box-shadow: 1px 3px 7px #b3b0b0;
-}
-
-.crater2 {
-    left: 14%;
-    top: 67%;
-    width: 2px;
-    height: 2px;
-}
-
-.crater3 {
-    left: 60%;
-    top: 58%;
-    width: 2px;
-    height: 2px;
-}
-
-.planet > .moon {
-    /*animation: myOrbit 4s linear infinite;*/
+    transform: translateX(-50%) rotate(0deg);
+    /*animation: animateEarth 20s linear infinite;*/
 }
 
 .earth {
@@ -109,16 +116,8 @@ body {
     -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset;
     left: 50%;
     top: 50%;
-    transform: translateX(calc(-50% + 100px)) translateY(-50%);
-    animation: earthRotation 8s linear infinite, animateEarth 10s linear infinite;
-}
-
-.earthGroup {
-    position: absolute;
-    left: 0;
-    top: 50%;
     transform: translate(-50%, -50%);
-    /*animation: animateEarth 20s linear infinite;*/
+    /*animation: earthRotation 4s linear infinite;*/
 }
 
 .earth > .moon {
@@ -129,10 +128,10 @@ body {
 
 @keyframes myOrbit {
     from {
-        transform: rotate(0deg) translateX(75px) rotate(0deg);
+        transform: rotate(0) translate(-50%, calc( -50% - 50px)) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(75px) rotate(-360deg);
+        transform: rotate(360deg) translate(-50%, calc( -50% - 50px)) rotate(-360deg);
     }
 }
 
