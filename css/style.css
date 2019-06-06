@@ -20,13 +20,15 @@ body {
     height: 100vh;
     /*background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);*/
     background: #090A0F;
+    background: linear-gradient(to bottom, rgba(11, 16, 31, 1) 8%, rgba(30, 19, 35, 1) 22%, rgba(66, 28, 50, 1) 100%);
     position: relative;
     z-index: -3;
+    animation: movegalaxy;
 }
 
-.planet {
-    width: 100px;
-    height: 100px;
+.sun {
+    width: 300px;
+    height: 300px;
     background: radial-gradient(circle at 25px 25px, #fec85c, #f07a23);
     border-radius: 50%;
     position: absolute;
@@ -37,69 +39,21 @@ body {
 }
 
 .mercury{
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     position: absolute;
-    background-image: radial-gradient(circle at 25px 25px, #e67e22 5%, #d35400 75%);
-   /* box-shadow: -15px -10px 0 -10px rgba(0, 0, 0, 0.05) inset;*/
-    animation: animateEarth 20s linear infinite;
+    background: url("../img/mercury.png");
+    background-size: cover;
 }
 
-.uranus{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    background-image: radial-gradient(circle at 25px 25px, #25c9fc, #50b3d1);
-    box-shadow: 0 0 70px 10px #25c9fc;
-}
+.venus{
 
-.moon {
-    width: 15px;
-    height: 15px;
-    box-shadow: 0 0 40px #6FCAEA;
-    background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(calc(-50% + 75px)) translateY(calc(-50%));
-}
-
-.moon .crater1, .crater2, .crater3 {
-    position: absolute;
-    left: 45%;
-    top: 25%;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: #c4c1c1;
-    opacity: 0.75;
-    box-shadow: 1px 3px 7px #b3b0b0;
-}
-
-.crater2 {
-    left: 14%;
-    top: 67%;
-    width: 2px;
-    height: 2px;
-}
-
-.crater3 {
-    left: 60%;
-    top: 58%;
-    width: 2px;
-    height: 2px;
-}
-
-.planet > .moon {
-    /*animation: myOrbit 4s linear infinite;*/
 }
 
 .earth {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     position: absolute;
     /*background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);*/
@@ -125,6 +79,101 @@ body {
     animation: myOrbit 5s linear infinite;
 }
 
+.moon {
+    /*width: 15px;
+    height: 15px;*/
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 20px #6FCAEA;
+    background: url("../img/moon.png");
+    background-size: cover;
+    /*background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);*/
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(calc(-50% + 75px)) translateY(calc(-50%));
+}
+
+/*
+.moon .crater1, .crater2, .crater3 {
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #c4c1c1;
+    opacity: 0.75;
+    !*box-shadow: 1px 3px 7px #b3b0b0;*!
+}
+
+.crater2 {
+    left: 14%;
+    top: 67%;
+    !*width: 2px;
+    height: 2px;*!
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+
+}
+
+.crater3 {
+    left: 60%;
+    top: 58%;
+   !* width: 2px;
+    height: 2px;*!
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+}*/
+
+.sun > .moon {
+    /*animation: myOrbit 4s linear infinite;*/
+}
+
+.mars {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background: url("../img/mars.png");
+    background-size: cover;
+    /*background-image: radial-gradient(circle at 25px 25px, #e67e22 5%, #d35400 75%);
+   /* box-shadow: -15px -10px 0 -10px rgba(0, 0, 0, 0.05) inset;*/
+    animation: animateEarth 20s linear infinite;
+}
+.jupiter{
+
+}
+
+.saturn{
+
+}
+
+/*.uranus {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: radial-gradient(circle at 25px 25px, #25c9fc, #50b3d1);
+    box-shadow: 0 0 70px 10px #25c9fc;
+}*/
+
+.neptune{
+
+}
+
+.pluto{
+
+}
+
+
+
+
 /* ANIMATIONEN müssen noch angepasst werden */
 
 @keyframes myOrbit {
@@ -136,7 +185,7 @@ body {
     }
 }
 
-@keyframes animateEarth  {
+@keyframes animateEarth {
     from {
         transform: rotate(0deg) translateX(100px) rotate(0deg);
     }
@@ -150,3 +199,4 @@ body {
         background-position: 250% 50%;
     }
 }
+
