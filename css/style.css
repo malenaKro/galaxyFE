@@ -92,7 +92,7 @@ body {
     height: 15px;*/
     width: 60px;
     height: 60px;
-    box-shadow: 0 0 20px #6FCAEA;
+    /*box-shadow: 0 0 20px #6FCAEA;*/
     background: url("../img/moon.png");
     background-size: cover;
     /*background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);*/
@@ -138,10 +138,10 @@ body {
     height: 60px;
     border-radius: 50%;
     position: absolute;
-    background: url("../img/saturn.png");
+    background: url("../img/uranus.png");
     background-size: cover;
     /*background-image: radial-gradient(circle at 25px 25px, #25c9fc, #50b3d1);*/
-    right: 10%;
+    right: 90%;
 }
 
 .neptune{
@@ -155,7 +155,13 @@ body {
 }
 
 .pluto{
-
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    background: url("../img/pluto.png");
+    background-size: cover;
+    left: 30%;
 }
 
 
