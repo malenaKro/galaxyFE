@@ -1,6 +1,6 @@
 (function(){
 
-    const NUM_OF_PARTICLES = 200;
+    const NUM_OF_PARTICLES = 300;
 
 
     let canvas;

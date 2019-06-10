@@ -1,5 +1,5 @@
 body {
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -13,6 +13,16 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
+    justify-content: center;
+}
+
+.orbit {
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: absolute;
+    border-radius: 100%;
+    animation: orbit 20s linear infinite;
 }
 
 #stars {
@@ -44,98 +54,102 @@ body {
 }
 
 .mercury {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background: url("../img/mercury.png");
     background-size: cover;
-    top: 90%;
+    top: 40%;
+    left: 310px;
+    transform: translateY(-50%);
 }
 
 .venus {
-    width: 60px;
-    height: 60px;
+    width: 35px;
+    height: 35px;
     background: url("../img/venus.png");
     background-size: cover;
-    top: 60%;
-    left: 20%;
+    top: 45%;
+    left: 370px;
 
 }
 
 .earth {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     /*background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);*/
     background: url("../img/map.png");
     background-size: cover;
     box-shadow: -20px -10px 0 -10px rgba(0, 0, 0, 0.1) inset,
     -60px -20px 0 0 rgba(0, 0, 0, 0.1) inset;
-    left: 50%;
+    right: 480px;
     top: 50%;
     transform: translateX(calc(-50% + 100px)) translateY(-50%);
-    animation: earthRotation 8s linear infinite, animateEarth 10s linear infinite;
+    animation: earthRotation 10s linear infinite, animateEarth 10s linear infinite;
 }
 
 .earthGroup {
     position: absolute;
-    left: 0;
-    top: 50%;
     transform: translate(-50%, -50%);
-    /*animation: animateEarth 20s linear infinite;*/
+    animation: animateEarth 20s linear infinite;
 }
 
 .earth > .moon {
-    animation: myOrbit 5s linear infinite;
+    animation: myOrbit 7s linear infinite;
 }
 
 .moon {
-    /*width: 15px;
-    height: 15px;*/
-    width: 60px;
-    height: 60px;
+    width: 20px;
+    height: 20px;
     /*box-shadow: 0 0 20px #6FCAEA;*/
     background: url("../img/moon.png");
     background-size: cover;
     /*background-image: radial-gradient(circle, #fff 5%, #D4D9E2 75%);*/
     left: 50%;
     top: 50%;
-    transform: translateX(calc(-50% + 75px)) translateY(calc(-50%));
+    transform: translateX(calc(-50% + 20px)) translateY(calc(-50%));
 }
 
 .mars {
-    width: 60px;
-    height: 60px;
+    width: 42px;
+    height: 42px;
     background: url("../img/mars.png");
     background-size: cover;
     /*background-image: radial-gradient(circle at 25px 25px, #e67e22 5%, #d35400 75%);
    /* box-shadow: -15px -10px 0 -10px rgba(0, 0, 0, 0.05) inset;*/
     animation: animateEarth 20s linear infinite;
+    left: 400px;
+    top: 70%;
 }
 
 .jupiter {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background: url("../img/jupiter.png");
     background-size: cover;
-
+    left: 350px;
+    top: -40%;
 }
 
 .saturn {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     background: url("../img/saturn.png");
     background-size: cover;
-    top: 40%;
+    left: 400px;
+    top: -80%;
+
 }
 
 .uranus {
-    width: 60px;
-    height: 60px;
+    width: 67px;
+    height: 67px;
     position: absolute;
     background: url("../img/uranus.png");
     background-size: cover;
     /*background-image: radial-gradient(circle at 25px 25px, #25c9fc, #50b3d1);*/
-    left: 90%;
+    left: 400px;
+    top: -130%;
 }
 
 .neptune {
@@ -144,15 +158,17 @@ body {
     position: absolute;
     background: url("../img/neptune.png");
     background-size: cover;
-    left: 40%;
+    right: 300px;
+    top: -60%;
 }
 
 .pluto {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     background: url("../img/pluto.png");
     background-size: cover;
-    left: 10%;
+    left: 400px;
+    top: 450px;
 }
 
 /* ANIMATIONEN müssen noch angepasst werden */
@@ -181,5 +197,9 @@ body {
     }
 }
 
-
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
