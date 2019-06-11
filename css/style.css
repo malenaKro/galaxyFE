@@ -1,6 +1,5 @@
 body {
     height: 100vh;
-    overflow: hidden;
 }
 
 * {
@@ -9,7 +8,7 @@ body {
     box-sizing: border-box;
 }
 
-.content {
+.solar-system {
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -203,3 +202,12 @@ body {
     }
 }
 
+.section {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(11,16,31,1);
+}
+
+.sun-section {
+    background: linear-gradient(to top, rgba(11,16,31,1) 0%, rgba(30,19,35,1) 42%, rgba(66,28,50,1) 100%);
+}
