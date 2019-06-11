@@ -1,7 +1,8 @@
 (function(){
 
-    const NUM_OF_PARTICLES = 300;
+    /* STAR PARTICLES */
 
+    const NUM_OF_PARTICLES = 300;
 
     let canvas;
     let ctx;
@@ -76,5 +77,36 @@
     }
 
     draw();
+
+    /* PLANET ANIMATION WHEN SCROLLING */
+
+    const sunPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    }
+
+    const tween = new TimelineLite();
+
+    tween.add(
+      TweenLite.to('.sun-info', 2, {
+          bezier: sunPath,
+          ease: Power1.easeInOut
+      })
+    );
+
+    const sunController = new ScrollMagic.Controller();
+
+    const sunScene = new ScrollMagic.Scene({
+        triggerElement: 'sun-section',
+        duration: 500,
+        triggerHook: 0.8
+
+    })
+        .setTween(tween)
+        .addIndicators()
+        .addTo(sunController);
 
 }());
