@@ -33,12 +33,13 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.moon .crater1, .crater2, .crater3 {
+.crater1, .crater2, .crater3 {
     position: absolute;
-    left: 45%;
-    top: 25%;
+    left: 50%;
+    top: 50%;
     width: 3px;
     height: 3px;
     border-radius: 50%;
@@ -61,7 +62,7 @@ body {
     height: 2px;
 }
 
-.planet {
+.sun {
     width: 100px;
     height: 100px;
     background: radial-gradient(circle at 25px 25px, #fec85c, #f07a23);
@@ -80,20 +81,22 @@ body {
     position: absolute;
     background-image: radial-gradient(circle at 25px 25px, #e67e22 5%, #d35400 75%);
    /* box-shadow: -15px -10px 0 -10px rgba(0, 0, 0, 0.05) inset;*/
-    animation: animateEarth 20s linear infinite;
+    animation: animateMercury 20s linear infinite;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.uranus{
+.venus{
     width: 30px;
     height: 30px;
     border-radius: 50%;
     position: absolute;
     background-image: radial-gradient(circle at 25px 25px, #25c9fc, #50b3d1);
     box-shadow: 0 0 70px 10px #25c9fc;
-}
-
-.planet > .moon {
-    /*animation: myOrbit 4s linear infinite;*/
+    animation: animateVenus 20s linear infinite;
+    left: 50%;
+    top: 50%;
 }
 
 .earthGroup {
@@ -101,7 +104,7 @@ body {
     left: 50%;
     top: 50%;
     transform: translateX(-50%) rotate(0deg);
-    /*animation: animateEarth 20s linear infinite;*/
+    animation: animateEarth 20s linear infinite;
 }
 
 .earth {
@@ -137,15 +140,33 @@ body {
 
 @keyframes animateEarth  {
     from {
-        transform: rotate(0deg) translateX(100px) rotate(0deg);
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
     }
     to {
-        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
     }
 }
 
 @keyframes earthRotation {
     100% {
         background-position: 250% 50%;
+    }
+}
+
+@keyframes animateMercury  {
+    from {
+        transform: rotate(0deg) translateX(80px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(80px) rotate(-360deg);
+    }
+}
+
+@keyframes animateVenus  {
+    from {
+        transform: rotate(0deg) translateX(110px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(110px) rotate(-360deg);
     }
 }
