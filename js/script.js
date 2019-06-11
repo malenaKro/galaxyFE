@@ -101,7 +101,7 @@
 
     const sunScene = new ScrollMagic.Scene({
         triggerElement: 'sun-section',
-        duration: 500,
+        duration: 800,
         triggerHook: 0.8
 
     })
