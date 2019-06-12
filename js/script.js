@@ -78,7 +78,79 @@
 
     draw();
 
+    /* PLACING THE INFO-TEXTS */
+
+    let sunInfo = document.querySelector(".sun-section > .planet-info");
+    sunInfo.style.top = "calc(100vh + 25%)";
+    sunInfo.style.left = "50%";
+
+    let mercuryInfo = document.querySelector(".mercury-section > .planet-info");
+    mercuryInfo.style.top = "calc(200vh + 25%)";
+    mercuryInfo.style.left = "5%";
+
+    let venusInfo = document.querySelector(".venus-section > .planet-info");
+    venusInfo.style.top = "calc(300vh + 25%)";
+    venusInfo.style.left = "50%";
+
+    let earthInfo = document.querySelector(".earth-section > .planet-info");
+    earthInfo.style.top = "calc(400vh + 25%)";
+    earthInfo.style.left = "5%";
+
+    let marsInfo = document.querySelector(".mars-section > .planet-info");
+    marsInfo.style.top = "calc(500vh + 25%)";
+    marsInfo.style.left = "50%";
+
+    let jupiterInfo = document.querySelector(".jupiter-section > .planet-info");
+    jupiterInfo.style.top = "calc(600vh + 25%)";
+    jupiterInfo.style.left = "5%";
+
+    let saturnInfo = document.querySelector(".saturn-section > .planet-info");
+    saturnInfo.style.top = "calc(700vh + 25%)";
+    saturnInfo.style.left = "50%";
+
+    let uranusInfo = document.querySelector(".uranus-section > .planet-info");
+    uranusInfo.style.top = "calc(800vh + 25%)";
+    uranusInfo.style.left = "5%";
+
+    let neptuneInfo = document.querySelector(".neptune-section > .planet-info");
+    neptuneInfo.style.top = "calc(900vh + 25%)";
+    neptuneInfo.style.left = "50%";
+
     /* PLANET ANIMATION WHEN SCROLLING */
+
+    class Planet {
+        constructor (animationPath, triggerElement, tweenElement){
+            this.path = animationPath;
+            this.triggerElement = triggerElement;
+            this.tweenElement = tweenElement;
+
+            this.animate();
+        }
+
+        animate (){
+
+            const tween = new TimelineLite();
+
+            tween.add(
+                TweenLite.to(this.tweenElement, 2, {
+                    bezier: this.path,
+                    ease: Power1.easeInOut
+                })
+            );
+
+            const controller = new ScrollMagic.Controller();
+
+            const scene = new ScrollMagic.Scene({
+                triggerElement: this.triggerElement,
+                duration: 800,
+                triggerHook: 0.8
+
+            })
+                .setTween(tween)
+                .addIndicators()
+                .addTo(controller);
+        }
+    }
 
     const sunPath = {
         curviness: 1.25,
@@ -86,27 +158,81 @@
         values: [
             {x: 200, y: -200}
         ]
-    }
+    };
 
-    const tween = new TimelineLite();
+    const mercuryPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: -500, y: -200}
+        ]
+    };
 
-    tween.add(
-      TweenLite.to('.sun-info', 2, {
-          bezier: sunPath,
-          ease: Power1.easeInOut
-      })
-    );
+    const venusPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
 
-    const sunController = new ScrollMagic.Controller();
+    const earthPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
 
-    const sunScene = new ScrollMagic.Scene({
-        triggerElement: 'sun-section',
-        duration: 800,
-        triggerHook: 0.8
+    const marsPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
 
-    })
-        .setTween(tween)
-        .addIndicators()
-        .addTo(sunController);
+    const jupiterPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
+
+    const saturnPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
+
+    const uranusPath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
+
+    const neptunePath = {
+        curviness: 1.25,
+        autoRotate: true,
+        values: [
+            {x: 200, y: -200}
+        ]
+    };
+
+    let sun = new Planet (sunPath, '.sun-section', '.sun-planet');
+    let mercury = new Planet (mercuryPath, '.mercury-section', '.mercury-planet');
+    let venus = new Planet (venusPath, '.venus-section', '.venus-planet');
+    let earth = new Planet (earthPath, '.earth-section', '.earth-planet');
+    let mars = new Planet (marsPath, '.mars-section', '.mars-planet');
+    let jupiter = new Planet (jupiterPath, '.jupiter-section', '.jupiter-planet');
+    let saturn = new Planet (saturnPath, '.saturn-section', '.saturn-planet');
+    let uranus = new Planet (uranusPath, '.uranus-section', '.uranus-planet');
+    let neptune = new Planet (neptunePath, '.neptune-section', '.neptune-planet');
+
 
 }());
