@@ -82,39 +82,30 @@
 
     let sunInfo = document.querySelector(".sun-section > .planet-info");
     sunInfo.style.top = "calc(100vh + 25%)";
-    sunInfo.style.left = "50%";
 
     let mercuryInfo = document.querySelector(".mercury-section > .planet-info");
     mercuryInfo.style.top = "calc(200vh + 25%)";
-    mercuryInfo.style.left = "5%";
 
     let venusInfo = document.querySelector(".venus-section > .planet-info");
     venusInfo.style.top = "calc(300vh + 25%)";
-    venusInfo.style.left = "50%";
 
     let earthInfo = document.querySelector(".earth-section > .planet-info");
     earthInfo.style.top = "calc(400vh + 25%)";
-    earthInfo.style.left = "5%";
 
     let marsInfo = document.querySelector(".mars-section > .planet-info");
     marsInfo.style.top = "calc(500vh + 25%)";
-    marsInfo.style.left = "50%";
 
     let jupiterInfo = document.querySelector(".jupiter-section > .planet-info");
     jupiterInfo.style.top = "calc(600vh + 25%)";
-    jupiterInfo.style.left = "5%";
 
     let saturnInfo = document.querySelector(".saturn-section > .planet-info");
     saturnInfo.style.top = "calc(700vh + 25%)";
-    saturnInfo.style.left = "50%";
 
     let uranusInfo = document.querySelector(".uranus-section > .planet-info");
     uranusInfo.style.top = "calc(800vh + 25%)";
-    uranusInfo.style.left = "5%";
 
     let neptuneInfo = document.querySelector(".neptune-section > .planet-info");
     neptuneInfo.style.top = "calc(900vh + 25%)";
-    neptuneInfo.style.left = "50%";
 
     /* PLANET ANIMATION WHEN SCROLLING */
 
@@ -132,7 +123,7 @@
             const tween = new TimelineLite();
 
             tween.add(
-                TweenLite.to(this.tweenElement, 2, {
+                TweenLite.to(this.tweenElement, 1, {
                     bezier: this.path,
                     ease: Power1.easeInOut
                 })
@@ -142,8 +133,8 @@
 
             const scene = new ScrollMagic.Scene({
                 triggerElement: this.triggerElement,
-                duration: 800,
-                triggerHook: 0.8
+                duration: 500,
+                triggerHook: 0.5
 
             })
                 .setTween(tween)
@@ -164,7 +155,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: -500, y: -200}
+            {x: -700, y: -200}
         ]
     };
 
@@ -172,7 +163,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: 200, y: -200}
+            {x: 280, y: -200}
         ]
     };
 
@@ -180,7 +171,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: 200, y: -200}
+            {x: -750, y: -200}
         ]
     };
 
@@ -188,7 +179,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: 200, y: -200}
+            {x: 280, y: -200}
         ]
     };
 
@@ -196,7 +187,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: 200, y: -200}
+            {x: -750, y: -200}
         ]
     };
 
@@ -204,7 +195,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: 200, y: -200}
+            {x: 250, y: -200}
         ]
     };
 
@@ -212,7 +203,7 @@
         curviness: 1.25,
         autoRotate: true,
         values: [
-            {x: 200, y: -200}
+            {x: -750, y: -200}
         ]
     };
 
