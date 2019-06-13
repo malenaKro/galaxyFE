@@ -1,3 +1,5 @@
+/* GENERAL */
+
 body {
     height: 100vh;
     color: white;
@@ -12,29 +14,24 @@ body {
     box-sizing: border-box;
 }
 
+/* CANVAS ELEMENT */
+
+#stars {
+    width: 100vw;
+    height: 100vh;
+    background: #090A0F;
+    background: linear-gradient(to bottom, rgba(11, 16, 31, 1) 8%, rgba(30, 19, 35, 1) 22%, rgba(66, 28, 50, 1) 100%);
+    position: relative;
+    z-index: -3;
+}
+
+/* SOLAR SYSTEM */
+
 .solar-system {
     width: 100vw;
     height: 100vh;
     position: relative;
     justify-content: center;
-}
-
-.orbit {
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    position: absolute;
-    border-radius: 100%;
-}
-
-#stars {
-    width: 100vw;
-    height: 100vh;
-    /*background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);*/
-    background: #090A0F;
-    background: linear-gradient(to bottom, rgba(11, 16, 31, 1) 8%, rgba(30, 19, 35, 1) 22%, rgba(66, 28, 50, 1) 100%);
-    position: relative;
-    z-index: -3;
 }
 
 .sun {
@@ -54,6 +51,7 @@ body {
     border-radius: 50%;
     top: 50%;
     left: 50%;
+    z-index: 2;
 }
 
 .mercury {
@@ -61,7 +59,7 @@ body {
     height: 8px;
     background: url("../img/mercury.png");
     background-size: cover;
-    transform: translateX(calc(-50% + 100px)) translateY(-50%);
+    transform: translateX(calc(-50% + 100px - 8px / 2)) translateY(calc(-50% - 8px / 2 ));
     animation: animateMercury 10s linear infinite;
 }
 
@@ -93,6 +91,7 @@ body {
     left: 50%;
     transform: translate(calc(-50% + 180px), -50%);
     animation: animateEarth 20s linear infinite;
+    z-index: 2;
 }
 
 .earth > .moon {
@@ -152,7 +151,60 @@ body {
     animation: animateNeptune 33s linear infinite;
 }
 
-/* ANIMATIONEN müssen noch angepasst werden */
+/* ORBITS OF PLANETS */
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid white;
+    z-index: 0;
+    opacity: .05;
+}
+
+.mercury-orbit {
+    width: 200px;
+    height: 200px;
+}
+
+.venus-orbit {
+    width: 280px;
+    height: 280px;
+}
+
+.earth-orbit {
+    width: 360px;
+    height: 360px;
+}
+
+.mars-orbit {
+    width: 440px;
+    height: 440px;
+}
+
+.jupiter-orbit {
+    width: 600px;
+    height: 600px;
+}
+
+.saturn-orbit {
+    width: 760px;
+    height: 760px;
+}
+
+.uranus-orbit {
+    width: 900px;
+    height: 900px;
+}
+
+.neptune-orbit {
+    width: 1060px;
+    height: 1060px;
+}
+
+/* ANIMATIONS OF THE PLANETS*/
 
 @keyframes animateMercury {
     from {
@@ -241,6 +293,8 @@ body {
     }
 }
 
+/* INFO SECTION */
+
 .section {
     width: 100vw;
     height: 100vh;
@@ -285,9 +339,10 @@ section:nth-of-type(odd) > .planet-info {
 .sun-planet {
     width: 600px;
     height: 600px;
-    background-color: #f07a23;
+    background: radial-gradient(circle at 25px 25px, #fec85c, #f07a23);
     top: calc(100vh + 50%);
     left: -300px;
+    box-shadow: 0 0 70px 15px #fec85c;
 }
 
 .mercury-planet {
