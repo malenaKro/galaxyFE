@@ -22,9 +22,6 @@
             this.y = y;
             this.radius = Math.floor(Math.random() * (4 - 1) + 1);
             this.color = color;
-
-            //this.vx = Math.random() - 0.5;
-            this.vy = Math.random() * 0.1 - 0.05;
         }
 
         draw(){
@@ -32,18 +29,6 @@
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
             ctx.fill();
-            //ctx.fillRect(this.x, this.y, 8, 8);
-        }
-        update(){
-            this.y+=this.vy;
-
-            //check out of bounds
-            if (this.y <= 0) {
-                this.y = canvas.height;
-            }
-            if (this.y >= canvas.height){
-                this.y = 0;
-            }
         }
     }
 
@@ -69,11 +54,8 @@
 
         //update & draw
         particles.forEach( p => {
-            p.update();
             p.draw();
         });
-
-        window.requestAnimationFrame(draw);
     }
 
     draw();
@@ -138,7 +120,7 @@
 
             })
                 .setTween(tween)
-                .addIndicators()
+                //.addIndicators()
                 .addTo(controller);
         }
     }
