@@ -206,6 +206,5 @@
     let saturn = new Planet (saturnPath, '.saturn-section', '.saturn-planet');
     let uranus = new Planet (uranusPath, '.uranus-section', '.uranus-planet');
     let neptune = new Planet (neptunePath, '.neptune-section', '.neptune-planet');
-
-
+    
 }());
