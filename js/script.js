@@ -92,10 +92,13 @@
     /* PLANET ANIMATION WHEN SCROLLING */
 
     class Planet {
-        constructor (animationPath, triggerElement, tweenElement){
+        constructor (animationPath, triggerElement, tweenElement, counterElement, end, duration){
             this.path = animationPath;
             this.triggerElement = triggerElement;
             this.tweenElement = tweenElement;
+            this.counterElement = counterElement;
+            this.end = end;
+            this.duration = duration;
 
             this.animate();
         }
@@ -122,6 +125,46 @@
                 .setTween(tween)
                 //.addIndicators()
                 .addTo(controller);
+
+            let obj = {
+                id: this.counterElement,
+                start: 0,
+                end: this.end,
+                duration: this.duration
+            };
+
+            let that = this;
+
+            scene.on("end", function(e){
+
+                that.animateCounter(that);
+
+            });
+        }
+
+        animateCounter(planet) {
+
+            if (planet.end === 0) return;
+
+            let range = planet.end - 0;
+            let current = 0;
+            let stepTime = Math.abs(Math.floor(planet.duration / range));
+            let increment = planet.end > 0? 1 : -1;
+
+            if ( stepTime == 0 ){
+                stepTime = 1;
+                increment *= 2;
+            }
+
+            let obj = document.querySelector(planet.counterElement);
+
+            let timer = setInterval(function() {
+                current += increment;
+                obj.innerHTML = current + " Mio. km";
+                if (current == planet.end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
         }
     }
 
@@ -197,14 +240,14 @@
         ]
     };
 
-    let sun = new Planet (sunPath, '.sun-section', '.sun-planet');
-    let mercury = new Planet (mercuryPath, '.mercury-section', '.mercury-planet');
-    let venus = new Planet (venusPath, '.venus-section', '.venus-planet');
-    let earth = new Planet (earthPath, '.earth-section', '.earth-planet');
-    let mars = new Planet (marsPath, '.mars-section', '.mars-planet');
-    let jupiter = new Planet (jupiterPath, '.jupiter-section', '.jupiter-planet');
-    let saturn = new Planet (saturnPath, '.saturn-section', '.saturn-planet');
-    let uranus = new Planet (uranusPath, '.uranus-section', '.uranus-planet');
-    let neptune = new Planet (neptunePath, '.neptune-section', '.neptune-planet');
-    
+    let sun = new Planet (sunPath, '.sun-section', '.sun-planet', "#sun-distance > strong", 0, 400);
+    let mercury = new Planet (mercuryPath, '.mercury-section', '.mercury-planet',"#mercury-distance > strong", 58, 400);
+    let venus = new Planet (venusPath, '.venus-section', '.venus-planet', "#venus-distance > strong", 108, 400);
+    let earth = new Planet (earthPath, '.earth-section', '.earth-planet', "#earth-distance > strong", 150, 400);
+    let mars = new Planet (marsPath, '.mars-section', '.mars-planet', "#mars-distance > strong", 228, 400);
+    let jupiter = new Planet (jupiterPath, '.jupiter-section', '.jupiter-planet', "#jupiter-distance > strong", 778, 500);
+    let saturn = new Planet (saturnPath, '.saturn-section', '.saturn-planet', "#saturn-distance > strong", 1440, 600);
+    let uranus = new Planet (uranusPath, '.uranus-section', '.uranus-planet', "#uranus-distance > strong", 2900, 600);
+    let neptune = new Planet (neptunePath, '.neptune-section', '.neptune-planet', "#neptune-distance > strong", 4500, 600);
+
 }());
